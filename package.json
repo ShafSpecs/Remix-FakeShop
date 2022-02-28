@@ -1,0 +1,36 @@
+{
+  "name": "remix-app-template",
+  "private": true,
+  "description": "",
+  "license": "",
+  "sideEffects": false,
+  "scripts": {
+    "build": "run-p build:*",
+    "dev": "run-p dev:*",
+    "postinstall": "remix setup node",
+    "build:remix": "cross-env NODE_ENV=production remix build",
+    "build:worker": "esbuild ./app/entry.worker.ts --outfile=./public/entry.worker.js --minify --bundle --format=esm --define:process.env.NODE_ENV='\"production\"'",
+    "dev:remix": "cross-env NODE_ENV=development remix dev",
+    "dev:worker": "esbuild ./app/entry.worker.ts --outfile=./public/entry.worker.js --bundle --format=esm --define:process.env.NODE_ENV='\"development\"' --watch"
+  },
+  "dependencies": {
+    "@remix-run/react": "^1.2.2",
+    "@remix-run/vercel": "^1.2.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-icons": "^4.3.1",
+    "remix": "^1.2.2"
+  },
+  "devDependencies": {
+    "@remix-run/dev": "^1.2.2",
+    "@remix-run/serve": "^1.2.2",
+    "@types/react": "^17.0.24",
+    "@types/react-dom": "^17.0.9",
+    "cross-env": "^7.0.3",
+    "remix-pwa": "^0.6.5",
+    "typescript": "^4.5.5"
+  },
+  "engines": {
+    "node": ">=14"
+  }
+}

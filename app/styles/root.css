@@ -1,0 +1,154 @@
+* { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px
+}
+
+body {
+    min-height: 100vh;
+}
+
+.header {
+    background-color: #8B26C3;
+    color: #fff;
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.325rem 0.625rem;
+}
+
+.header .title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.header .title a {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.header nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0.25rem;
+}
+
+.header nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Roboto", sans-serif;
+    padding: 0;
+}
+
+.header nav li {
+    margin: 0 0.5rem;
+    cursor: pointer;
+}
+
+.header nav li:hover {
+    color: #DCACE8;
+}
+
+.trigger-btn {
+    display: none;
+    position: absolute;
+    right: 1rem;
+    background: #DCACE8;
+    color: #fff;
+    border: #8B26C3 1px solid;
+    border-radius: 0.5rem;
+    outline: 0;
+    padding: 0.25rem 0.5rem;
+    font-size: 2rem;
+    cursor: pointer;
+    text-align: center;
+}
+
+.header .mobile {
+    display: none;
+}
+
+.header .mobile ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: max-content;
+    width: 100%;
+}
+
+.header .mobile ul a {
+    margin: 0.5rem 0;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+    font-size: 1.25rem;
+}
+
+a:any-link {
+    color: inherit;
+    text-decoration: none;
+}
+
+@media screen and (max-width: 640px) {
+    html {
+        font-size: 12.5px;
+    }
+
+    .header {
+        height: 4rem;
+    }
+
+    .header .mobile {
+        width: 100%;
+        position: absolute;
+        transform: translateY(3.175rem);
+        background-color: #8B26C3;
+        left: 0;
+        margin: 0;
+    }
+
+    .trigger-btn {
+        display: block;
+    }
+
+    .header .nav {
+        display: none;
+    }
+
+    .visible {
+        display: flex !important;
+    }
+}
+
+@media screen and (min-width: 641px) and (max-width: 768px) {
+    html {
+        font-size: 14.25px;
+    }
+}
+
+@media screen and (min-width: 1081px) and (max-width: 1280px) {
+    html {
+        font-size: 18.325px;
+    }
+}
+
+@media screen and (min-width: 1281px) {
+    html {
+        font-size: 20.25px;
+    }
+}
