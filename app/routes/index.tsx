@@ -63,8 +63,10 @@ export function ItemCard({
     <div className="card">
       <Link to={`products/${id}`}>
         <img src={image} className="card-img" alt={title} />
-        <span className="card-title">{title}</span>
-        <span className="card-price">{`$${price}`}</span>
+        <div className="bottom">
+          <span className="card-title">{title}</span>
+          <span className="card-price">{`$${price}`}</span>
+        </div>
       </Link>
       <button>Add to Cart</button>
     </div>
@@ -80,7 +82,7 @@ export default function Index() {
     const randomNumber = Math.random() * 30000;
     const randomProduct = Math.random() * (data.length - 1);
     setTimeout(() => {
-      setRandom(data => data + 1)
+      setRandom((data) => data + 1);
       SendNotification("Remix FakeShop", {
         body: `New Item Here! Check it out \n${window.location.href}products/${data[randomProduct]?.id}`,
         silent: false,
@@ -93,11 +95,11 @@ export default function Index() {
 
   return (
     <div className="home">
-        {transition.state !== "idle" ? (
-          <div className="loading">
-            <div className="loader"></div>
-          </div>
-        ) : null}
+      {transition.state !== "idle" ? (
+        <div className="loading">
+          <div className="loader"></div>
+        </div>
+      ) : null}
       <section className="search">
         <Form className="form">
           <input
