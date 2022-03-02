@@ -2,7 +2,7 @@ import { Form, Link, useLoaderData, useParams, useTransition } from "remix";
 import { BiSearchAlt2 } from "react-icons/bi";
 import { SendNotification } from "~/utils/client/pwa-utils.client";
 
-import type { LoaderFunction, ActionFunction, LinksFunction } from "remix";
+import type { LoaderFunction, LinksFunction } from "remix";
 
 import styles from "../styles/home.css";
 import { useEffect, useState } from "react";
@@ -12,7 +12,6 @@ export const links: LinksFunction = () => {
 };
 
 export const loader: LoaderFunction = async ({ params, request }) => {
-  const shopData = await fetch("https://fakestoreapi.com/products");
   let url = new URL(request.url);
 
   if (url.searchParams.has("category")) {
@@ -43,8 +42,9 @@ export const loader: LoaderFunction = async ({ params, request }) => {
       data: arr,
     };
   } else {
+    const shopData = await fetch("https://fakestoreapi.com/products");
     return {
-      data: await shopData.json(),
+      data: shopData.json(),
     };
   }
 };
