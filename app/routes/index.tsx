@@ -41,12 +41,13 @@ export const loader: LoaderFunction = async ({ params, request }) => {
     return {
       data: arr,
     };
-  } else {
-    const shopData = await fetch("https://fakestoreapi.com/products");
-    return {
-      data: shopData.json(),
-    };
   }
+
+  const shopData = await fetch("https://fakestoreapi.com/products");
+
+  return {
+    data: await shopData.json(),
+  };
 };
 
 export function ItemCard({
