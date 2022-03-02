@@ -1,28 +1,44 @@
-.loading {
+.handler {
     position: absolute;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: #82828298;
+    background-color: #e4e4e498;
+    z-index: 9999;
+}
+
+.loading {
+    background-color: #fff;
     z-index: 9999;
     display: flex;
     align-items: center;
     justify-content: center;
     user-select: none;
     pointer-events: none;
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    border-radius: 0.625rem;
+    width: max-content;
+    padding: 1.325rem 1.625rem;
 }
 
 .loader {
-    border: 0.825rem solid #f3f3f3;
-    border-top: 0.825rem solid #2e2e2e;
+    border: 0.325rem solid #f3f3f3;
+    border-top: 0.325rem solid #9739c8;
     border-radius: 50%;
-    width: 120px;
-    height: 120px;
-    animation: spin 2s linear infinite;
-    position: fixed;
-    top: calc(50vh - 120px);
-    margin: auto;
+    width: 3rem;
+    height: 3rem;
+    position: relative;
+    animation: spin 1.5s linear infinite;
+    margin-right: 0.125rem;
+}
+
+.loading span {
+    color: #9739c8;
+    font-size: 1.5rem;
+    font-family: "Roboto", sans-serif;
 }
 
 @keyframes spin {

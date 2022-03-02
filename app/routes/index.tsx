@@ -96,8 +96,12 @@ export default function Index() {
   return (
     <div className="home">
       {transition.state !== "idle" ? (
-        <div className="loading">
-          <div className="loader"></div>
+        <div className="handler">
+          <div className="loading">
+            <div className="loader"></div>
+            &nbsp;
+            <span>Loading...</span>
+          </div>
         </div>
       ) : null}
       <section className="search">

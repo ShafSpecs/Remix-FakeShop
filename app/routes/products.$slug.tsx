@@ -31,8 +31,12 @@ export default function Slug() {
   return (
     <div className="slug">
       {transition.state !== "idle" ? (
-        <div className="loading">
-          <div className="loader"></div>
+        <div className="handler">
+          <div className="loading">
+            <div className="loader"></div>
+            &nbsp;
+            <span>Loading...</span>
+          </div>
         </div>
       ) : null}
       <div className="back" onClick={() => history.back()}>
